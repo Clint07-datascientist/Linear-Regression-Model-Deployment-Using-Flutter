@@ -28,6 +28,15 @@ class PredictionInput(BaseModel):
 # Load the best-performing model
 model = joblib.load("../ml_model/best_model.pkl")  # Path to your saved model in the ml_model folder
 
+@app.get("/")
+def read_root():
+    return {
+        "message": "Welcome to the Crop Yield Prediction API.",
+        "docs": "Visit /docs for the API documentation.",
+        "predict_endpoint": "Use the /predict endpoint to make predictions."
+    }
+
+
 @app.post("/predict")
 def predict(input_data: PredictionInput):
     # Convert input data to numpy array for prediction

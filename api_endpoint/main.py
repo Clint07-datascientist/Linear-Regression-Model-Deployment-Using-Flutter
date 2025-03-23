@@ -36,6 +36,11 @@ class PredictionInput(BaseModel):
     area: float = Field(..., ge=0, description="Cultivated area in hectares")
     production: float = Field(..., ge=0, description="Production volume in metric tons")
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Crop Yield Prediction API. Use /predict to make predictions."}
+
+
 @app.post("/predict")
 def predict(input_data: PredictionInput):
     # Convert input data to numpy array for prediction

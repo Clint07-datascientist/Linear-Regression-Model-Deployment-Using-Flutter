@@ -3,12 +3,12 @@ import '../services/api_service.dart';
 
 class PredictionProvider with ChangeNotifier {
   final ApiService _apiService = ApiService();
+  double? _predictedYield;
   bool _isLoading = false;
-  double? _prediction;
   String? _error;
 
+  double? get predictedYield => _predictedYield;
   bool get isLoading => _isLoading;
-  double? get prediction => _prediction;
   String? get error => _error;
 
   Future<void> predictYield({
@@ -20,13 +20,13 @@ class PredictionProvider with ChangeNotifier {
     required String seasonName,
     required double timeToHarvest,
   }) async {
-    _isLoading = true;
-    _error = null;
-    _prediction = null;
-    notifyListeners();
-
     try {
-      _prediction = await _apiService.predictYield(
+      _isLoading = true;
+      _error = null;
+      _predictedYield = null;
+      notifyListeners();
+
+      final prediction = await _apiService.predictYield(
         area: area,
         country: country,
         product: product,
@@ -35,8 +35,12 @@ class PredictionProvider with ChangeNotifier {
         seasonName: seasonName,
         timeToHarvest: timeToHarvest,
       );
+
+      _predictedYield = prediction;
+      _error = null;
     } catch (e) {
       _error = e.toString();
+      _predictedYield = null;
     } finally {
       _isLoading = false;
       notifyListeners();
@@ -44,7 +48,7 @@ class PredictionProvider with ChangeNotifier {
   }
 
   void clearPrediction() {
-    _prediction = null;
+    _predictedYield = null;
     _error = null;
     notifyListeners();
   }

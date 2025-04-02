@@ -31,6 +31,14 @@ app.add_middleware(
 
 # Load the model with error handling
 try:
+    print(f"Attempting to load model from: {model_path}")
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Directory contents: {os.listdir('.')}")
+    if os.path.exists('ml_model'):
+        print(f"ml_model directory contents: {os.listdir('ml_model')}")
+    else:
+        print("ml_model directory not found!")
+    
     model = joblib.load(model_path)
     print(f"Model loaded successfully from {model_path}")
     # Print model information for debugging
@@ -40,7 +48,10 @@ try:
     if hasattr(model, 'named_steps'):
         print("Pipeline steps:", model.named_steps)
 except Exception as e:
-    print(f"Error loading model: {e}")
+    print(f"Error loading model: {str(e)}")
+    print(f"Error type: {type(e)}")
+    import traceback
+    print(f"Full traceback: {traceback.format_exc()}")
     raise RuntimeError(f"Failed to load model from {model_path}")
 
 # Define input data schema with Pydantic

@@ -10,8 +10,11 @@ RUN apt-get update && apt-get install -y \
 # Copy requirements first to leverage Docker cache
 COPY requirements.txt .
 
-# Install numpy first to ensure it's properly installed
-RUN pip install --no-cache-dir numpy==1.23.5
+# Install core dependencies first
+RUN pip install --no-cache-dir numpy==1.23.5 && \
+    pip install --no-cache-dir scipy==1.10.1 && \
+    pip install --no-cache-dir scikit-learn==1.6.1 && \
+    pip install --no-cache-dir pandas==1.5.3
 
 # Install other Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt

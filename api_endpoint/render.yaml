@@ -8,4 +8,6 @@ services:
       - key: PYTHON_VERSION
         value: 3.9.0
       - key: MODEL_PATH
-        value: ml_model/best_model.pkl 
+        value: ml_model/best_model.pkl
+    healthCheckPath: /docs
+    autoDeploy: true 

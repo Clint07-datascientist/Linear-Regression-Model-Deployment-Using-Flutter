@@ -1,12 +1,12 @@
 services:
   - type: web
-    name: crop-yield-predictor-api
+    name: crop-yield-prediction-api
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: docker build -t crop-yield-api .
+    startCommand: docker run -p 8000:8000 crop-yield-api
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.11.0
       - key: MODEL_PATH
         value: ml_model/best_model.pkl
     healthCheckPath: /docs

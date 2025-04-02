@@ -51,7 +51,17 @@ try:
     import numpy as np
     print(f"NumPy loaded successfully: {np.__version__}")
     
-    model = joblib.load(model_path)
+    # Try to load the model with a different method
+    try:
+        with open(model_path, 'rb') as f:
+            model = joblib.load(f)
+    except Exception as e:
+        print(f"Error with direct joblib.load: {str(e)}")
+        # Try alternative loading method
+        import pickle
+        with open(model_path, 'rb') as f:
+            model = pickle.load(f)
+    
     print(f"Model loaded successfully from {model_path}")
     # Print model information for debugging
     print(f"Model type: {type(model)}")

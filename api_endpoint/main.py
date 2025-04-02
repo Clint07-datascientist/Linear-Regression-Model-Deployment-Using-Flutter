@@ -7,9 +7,17 @@ import numpy as np
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
+import sklearn
+import sys
 
 # Load environment variables from .env
 load_dotenv()
+
+# Print version information for debugging
+print(f"Python version: {sys.version}")
+print(f"NumPy version: {np.__version__}")
+print(f"Pandas version: {pd.__version__}")
+print(f"Scikit-learn version: {sklearn.__version__}")
 
 # Get the environment variables
 model_path = os.getenv("MODEL_PATH", "ml_model/best_model.pkl")
@@ -38,6 +46,10 @@ try:
         print(f"ml_model directory contents: {os.listdir('ml_model')}")
     else:
         print("ml_model directory not found!")
+    
+    # Try to load numpy first to ensure it's properly initialized
+    import numpy as np
+    print(f"NumPy loaded successfully: {np.__version__}")
     
     model = joblib.load(model_path)
     print(f"Model loaded successfully from {model_path}")

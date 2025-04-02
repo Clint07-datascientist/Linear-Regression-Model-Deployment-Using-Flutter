@@ -12,7 +12,7 @@ from pathlib import Path
 load_dotenv()
 
 # Get the environment variables
-model_path = os.getenv("MODEL_PATH", "../ml_model/best_model.pkl")
+model_path = os.getenv("MODEL_PATH", "ml_model/best_model.pkl")
 
 # Initialize FastAPI app
 app = FastAPI(

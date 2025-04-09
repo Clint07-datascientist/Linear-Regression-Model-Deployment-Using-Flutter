@@ -53,7 +53,12 @@ Linear-Regression-Model-Deployment-Using-Flutter/
 │       │   └── services/
 │       │       └── api_service.dart
 │       └── pubspec.yaml
-└── README.md
+├── ml_model
+|   └── crop_yield_prediction.ipynb
+|   ├── best_model.pkl
+|   ├── hvstat_africa_data.csv
+└── README.me
+
 ```
 
 ## Components
@@ -74,6 +79,8 @@ The FastAPI service provides a RESTful endpoint for making predictions. Key feat
 - Input validation using Pydantic
 - Error handling and logging
 - Model loading and prediction pipeline
+
+The link to the API service is `https://linear-regression-model-deployment-using-aak4.onrender.com`
 
 ### Flutter Application
 
@@ -113,7 +120,7 @@ cd api_endpoint
 uvicorn main:app --reload
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at `https://linear-regression-model-deployment-using-aak4.onrender.com`
 
 ### Flutter Application
 
@@ -132,6 +139,9 @@ flutter pub get
 ```bash
 flutter run
 ```
+5. ![Image](https://github.com/user-attachments/assets/8e7475a3-069f-4e37-9504-5056bb33b318)
+
+6. ![Image](https://github.com/user-attachments/assets/30ef0f8e-6eba-4975-8525-59090ad3e287)
 
 ## Usage
 
@@ -197,14 +207,14 @@ Predicts crop yield based on input parameters.
 ```python
 import requests
 
-url = "https://your-api-url/predict"
+url = "https://linear-regression-model-deployment-using-aak4.onrender.com/predict"
 data = {
     "area": 100.0,
-    "country": "US",
+    "country": "Rwanda",
     "product": "Corn",
     "production": 500.0,
-    "province": "Iowa",
-    "season_name": "Summer",
+    "province": "Kigali",
+    "season_name": "Main",
     "time_to_harvest": 120.0
 }
 

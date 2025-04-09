@@ -53,7 +53,12 @@ Linear-Regression-Model-Deployment-Using-Flutter/
 │       │   └── services/
 │       │       └── api_service.dart
 │       └── pubspec.yaml
-└── README.md
+├── ml_model
+|   └── crop_yield_prediction.ipynb
+|   ├── best_model.pkl
+|   ├── hvstat_africa_data.csv
+└── README.me
+
 ```
 
 ## Components
@@ -134,6 +139,9 @@ flutter pub get
 ```bash
 flutter run
 ```
+5. ![Image](https://github.com/user-attachments/assets/8e7475a3-069f-4e37-9504-5056bb33b318)
+
+6. ![Image](https://github.com/user-attachments/assets/30ef0f8e-6eba-4975-8525-59090ad3e287)
 
 ## Usage
 

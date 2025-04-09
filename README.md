@@ -207,14 +207,14 @@ Predicts crop yield based on input parameters.
 ```python
 import requests
 
-url = "https://your-api-url/predict"
+url = "https://linear-regression-model-deployment-using-aak4.onrender.com/predict"
 data = {
     "area": 100.0,
-    "country": "US",
+    "country": "Rwanda",
     "product": "Corn",
     "production": 500.0,
-    "province": "Iowa",
-    "season_name": "Summer",
+    "province": "Kigali",
+    "season_name": "Main",
     "time_to_harvest": 120.0
 }
 

@@ -75,6 +75,8 @@ The FastAPI service provides a RESTful endpoint for making predictions. Key feat
 - Error handling and logging
 - Model loading and prediction pipeline
 
+The link to the API service is `https://linear-regression-model-deployment-using-aak4.onrender.com`
+
 ### Flutter Application
 
 A modern, user-friendly mobile application with the following features:
@@ -113,7 +115,7 @@ cd api_endpoint
 uvicorn main:app --reload
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at `https://linear-regression-model-deployment-using-aak4.onrender.com`
 
 ### Flutter Application
 

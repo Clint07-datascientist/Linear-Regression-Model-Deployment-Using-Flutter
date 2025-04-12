@@ -24,6 +24,8 @@ This project aims to help farmers and agricultural professionals predict crop yi
 
 ## Dataset
 
+Sub-Saharan Africa faces severe agricultural data scarcity amidst high food insecurity and a large agricultural yield gap, making crop production data crucial for understanding and enhancing food systems. To address this gap, HarvestStat Africa presents the largest compilation of open-access subnational crop statistics and time-series across Sub-Saharan Africa. Based on agricultural statistics collated by USAID’s Famine Early Warning Systems Network, the subnational crop statistics are standardized and calibrated across changing administrative units to produce consistent and continuous time-series. The dataset includes 574,204 records, primarily spanning from 1980 to 2022, detailing quantity produced (metric tonnes; mt), harvested areas (hectares; ha), and yields (metric tonnes per hectare; mt/ha) for 33 countries and 94 crop types, including key cereals in Sub-Saharan Africa such as wheat, maize, rice, sorghum, barley, millet, and fonio. This new dataset enhances our understanding of how climate variability and change influence agricultural production, supports subnational food system analysis, and aids in operational yield forecasting. As an open-source resource, it establishes a precedent for sharing subnational crop statistics to inform decision-making and modeling efforts.
+
 The model was trained on agricultural data containing the following features:
 - Country
 - Province

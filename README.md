@@ -15,6 +15,7 @@ A machine learning-based application that predicts crop yields using linear regr
   - [API Service](#api-service)
   - [Flutter Application](#flutter-application)
 - [Usage](#usage)
+  - Demo Video(#demo-video)
 - [API Documentation](#api-documentation)
 
 ## Project Overview
@@ -156,6 +157,9 @@ flutter run
    - Time to Harvest (days)
 3. Click "Get Prediction" to receive the yield prediction
 4. View the predicted yield in tons
+
+   # Demo Video
+   https://www.loom.com/share/2c973c828c1b44e49828599b9b549352?sid=98cafc51-9c5a-4215-ad63-60f815a18c3d
 
 ## API Documentation
 
